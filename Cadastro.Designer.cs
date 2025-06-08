@@ -36,7 +36,7 @@
             // 
             // btnCadastroClientes
             // 
-            btnCadastroClientes.Location = new Point(245, 34);
+            btnCadastroClientes.Location = new Point(245, 76);
             btnCadastroClientes.Name = "btnCadastroClientes";
             btnCadastroClientes.Size = new Size(193, 38);
             btnCadastroClientes.TabIndex = 0;
@@ -45,7 +45,7 @@
             // 
             // btnCadastroProdutos
             // 
-            btnCadastroProdutos.Location = new Point(245, 78);
+            btnCadastroProdutos.Location = new Point(245, 120);
             btnCadastroProdutos.Name = "btnCadastroProdutos";
             btnCadastroProdutos.Size = new Size(193, 36);
             btnCadastroProdutos.TabIndex = 1;
@@ -54,7 +54,7 @@
             // 
             // btnCadastroPedidos
             // 
-            btnCadastroPedidos.Location = new Point(245, 120);
+            btnCadastroPedidos.Location = new Point(245, 162);
             btnCadastroPedidos.Name = "btnCadastroPedidos";
             btnCadastroPedidos.Size = new Size(193, 37);
             btnCadastroPedidos.TabIndex = 2;
@@ -63,7 +63,7 @@
             // 
             // btnCadastroUsuario
             // 
-            btnCadastroUsuario.Location = new Point(245, 163);
+            btnCadastroUsuario.Location = new Point(245, 37);
             btnCadastroUsuario.Name = "btnCadastroUsuario";
             btnCadastroUsuario.Size = new Size(193, 33);
             btnCadastroUsuario.TabIndex = 3;
