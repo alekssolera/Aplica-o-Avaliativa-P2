@@ -9,7 +9,20 @@ namespace Aplicação_Avaliativa_P2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            string username = textBox1.Text;
+            string password = textBox2.Text;
+
+            if (CredenciaisValidas(username, password))
+            {
+                Cadastro cadastroForm = new Cadastro();
+                cadastroForm.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Usuário ou senha inválidos. Tente novamente.", "Erro de Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+        
     }
 }
