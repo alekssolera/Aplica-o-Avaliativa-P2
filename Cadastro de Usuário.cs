@@ -23,6 +23,39 @@ namespace Aplicação_Avaliativa_P2
         {
             string username = textBox1.Text.Trim();
             string password = textBox2.Text.Trim();
+
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            {
+                MessageBox.Show("Por favor, preencha todos os campos.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            try
+            {
+                string directory = Path.GetDirectoryName(userCsvFilePath);
+                if (Directory.Exists(directory))
+                {
+                    Directory.CreateDirectory(directory);
+                }
+
+                Dictionary<string, string> users = LoadUsers();
+
+                if (users.ContainsKey(username))
+                {
+                    MessageBox.Show("Usuário já cadastrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                users.Add(username, password);
+
+                SaveUsers(users);
+
+                MessageBox.Show("Usuário cadastrado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                textBox1.Clear();
+                textBox2.Clear();
+            }
+
+
         }
     }
 }
