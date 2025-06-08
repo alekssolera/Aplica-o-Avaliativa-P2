@@ -62,6 +62,7 @@
             btnCadastroPedidos.TabIndex = 2;
             btnCadastroPedidos.Text = "Cadastro de Pedidos";
             btnCadastroPedidos.UseVisualStyleBackColor = true;
+            btnCadastroPedidos.Click += btnCadastroPedidos_Click;
             // 
             // btnCadastroUsuario
             // 
