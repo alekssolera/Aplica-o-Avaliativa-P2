@@ -28,24 +28,57 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnCadastro = new Button();
+            btnCadastroClientes = new Button();
+            btnCadastroProdutos = new Button();
+            btnCadastroPedidos = new Button();
+            btnCadastroUsuario = new Button();
             SuspendLayout();
             // 
-            // btnCadastro
+            // btnCadastroClientes
             // 
-            btnCadastro.Location = new Point(245, 34);
-            btnCadastro.Name = "btnCadastro";
-            btnCadastro.Size = new Size(193, 38);
-            btnCadastro.TabIndex = 0;
-            btnCadastro.Text = "Cadastro de Cliente";
-            btnCadastro.UseVisualStyleBackColor = true;
+            btnCadastroClientes.Location = new Point(245, 34);
+            btnCadastroClientes.Name = "btnCadastroClientes";
+            btnCadastroClientes.Size = new Size(193, 38);
+            btnCadastroClientes.TabIndex = 0;
+            btnCadastroClientes.Text = "Cadastro de Cliente";
+            btnCadastroClientes.UseVisualStyleBackColor = true;
+            // 
+            // btnCadastroProdutos
+            // 
+            btnCadastroProdutos.Location = new Point(245, 78);
+            btnCadastroProdutos.Name = "btnCadastroProdutos";
+            btnCadastroProdutos.Size = new Size(193, 36);
+            btnCadastroProdutos.TabIndex = 1;
+            btnCadastroProdutos.Text = "Cadastro de Produtos";
+            btnCadastroProdutos.UseVisualStyleBackColor = true;
+            // 
+            // btnCadastroPedidos
+            // 
+            btnCadastroPedidos.Location = new Point(245, 120);
+            btnCadastroPedidos.Name = "btnCadastroPedidos";
+            btnCadastroPedidos.Size = new Size(193, 37);
+            btnCadastroPedidos.TabIndex = 2;
+            btnCadastroPedidos.Text = "Cadastro de Pedidos";
+            btnCadastroPedidos.UseVisualStyleBackColor = true;
+            // 
+            // btnCadastroUsuario
+            // 
+            btnCadastroUsuario.Location = new Point(245, 163);
+            btnCadastroUsuario.Name = "btnCadastroUsuario";
+            btnCadastroUsuario.Size = new Size(193, 33);
+            btnCadastroUsuario.TabIndex = 3;
+            btnCadastroUsuario.Text = "Cadastro de Usuário";
+            btnCadastroUsuario.UseVisualStyleBackColor = true;
             // 
             // Cadastro
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(btnCadastro);
+            Controls.Add(btnCadastroUsuario);
+            Controls.Add(btnCadastroPedidos);
+            Controls.Add(btnCadastroProdutos);
+            Controls.Add(btnCadastroClientes);
             Name = "Cadastro";
             Text = "Cadastro";
             ResumeLayout(false);
@@ -53,6 +86,9 @@
 
         #endregion
 
-        private Button btnCadastro;
+        private Button btnCadastroClientes;
+        private Button btnCadastroProdutos;
+        private Button btnCadastroPedidos;
+        private Button btnCadastroUsuario;
     }
 }
