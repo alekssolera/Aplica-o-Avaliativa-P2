@@ -55,7 +55,11 @@ namespace Aplicação_Avaliativa_P2
                 textBox2.Clear();
             }
 
-
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao cadastrar usuário: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
     }
 }
