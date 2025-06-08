@@ -42,6 +42,7 @@
             btnCadastroClientes.TabIndex = 0;
             btnCadastroClientes.Text = "Cadastro de Cliente";
             btnCadastroClientes.UseVisualStyleBackColor = true;
+            btnCadastroClientes.Click += btnCadastroClientes_Click;
             // 
             // btnCadastroProdutos
             // 
