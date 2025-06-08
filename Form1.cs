@@ -23,6 +23,12 @@ namespace Aplicação_Avaliativa_P2
                 MessageBox.Show("Usuário ou senha inválidos. Tente novamente.", "Erro de Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        
+        private static bool CredenciaisValidas(string username, string password)
+        {
+            if (username == "ADMIN" && password == "123")
+                return true;
+
+            return false;
+        }
     }
 }
