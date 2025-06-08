@@ -69,6 +69,7 @@
             btnCadastroUsuario.TabIndex = 3;
             btnCadastroUsuario.Text = "Cadastro de Usuário";
             btnCadastroUsuario.UseVisualStyleBackColor = true;
+            btnCadastroUsuario.Click += btnCadastroUsuario_Click;
             // 
             // Cadastro
             // 
