@@ -28,12 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Cadastro";
+            btnCadastro = new Button();
+            SuspendLayout();
+            // 
+            // btnCadastro
+            // 
+            btnCadastro.Location = new Point(245, 34);
+            btnCadastro.Name = "btnCadastro";
+            btnCadastro.Size = new Size(193, 38);
+            btnCadastro.TabIndex = 0;
+            btnCadastro.Text = "Cadastro de Cliente";
+            btnCadastro.UseVisualStyleBackColor = true;
+            // 
+            // Cadastro
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(btnCadastro);
+            Name = "Cadastro";
+            Text = "Cadastro";
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Button btnCadastro;
     }
 }
