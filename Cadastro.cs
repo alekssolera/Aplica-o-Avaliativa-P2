@@ -28,5 +28,11 @@ namespace Aplicação_Avaliativa_P2
             Cadastro_de_Clientes cadastroClientesForm = new Cadastro_de_Clientes();
             cadastroClientesForm.Show();
         }
+
+        private void btnCadastroProdutos_Click(object sender, EventArgs e)
+        {
+            Cadastro_de_Produtos cadastroProdutosForm = new Cadastro_de_Produtos();
+            cadastroProdutosForm.Show();
+        }
     }
 }
