@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Aplicação_Avaliativa_P2
 {
@@ -20,7 +21,8 @@ namespace Aplicação_Avaliativa_P2
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-
+            string username = textBox1.Text.Trim();
+            string password = textBox2.Text.Trim();
         }
     }
 }
