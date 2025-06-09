@@ -105,6 +105,19 @@ namespace Aplicação_Avaliativa_P2
                 MessageBox.Show("Preencha usário  e nova senha.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            var users = LoadUsers();
+
+            if (users.ContainsKey(username))
+            {
+                users[username] = newPassword;
+
+                SaveUsers(users);
+                MessageBox.Show("Senha alterada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Usuário não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
