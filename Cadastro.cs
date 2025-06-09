@@ -12,7 +12,7 @@ namespace Aplicação_Avaliativa_P2
 {
     public partial class Cadastro : Form
     {
-        public Cadastro()
+        public Cadastro(bool isAdmin, string username, string password)
         {
             InitializeComponent();
         }
