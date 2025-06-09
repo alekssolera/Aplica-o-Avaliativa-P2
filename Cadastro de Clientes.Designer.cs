@@ -51,6 +51,7 @@
             label10 = new Label();
             label11 = new Label();
             btnCadastrarCliente = new Button();
+            btnBusca = new Button();
             SuspendLayout();
             // 
             // textBox1
@@ -135,44 +136,44 @@
             // 
             // textBox6
             // 
-            textBox6.Location = new Point(243, 27);
+            textBox6.Location = new Point(235, 27);
             textBox6.Name = "textBox6";
-            textBox6.Size = new Size(100, 23);
+            textBox6.Size = new Size(108, 23);
             textBox6.TabIndex = 10;
             // 
             // textBox7
             // 
-            textBox7.Location = new Point(243, 70);
+            textBox7.Location = new Point(235, 70);
             textBox7.Name = "textBox7";
-            textBox7.Size = new Size(100, 23);
+            textBox7.Size = new Size(108, 23);
             textBox7.TabIndex = 11;
             // 
             // textBox8
             // 
-            textBox8.Location = new Point(243, 112);
+            textBox8.Location = new Point(235, 112);
             textBox8.Name = "textBox8";
-            textBox8.Size = new Size(100, 23);
+            textBox8.Size = new Size(108, 23);
             textBox8.TabIndex = 12;
             // 
             // textBox9
             // 
             textBox9.Location = new Point(371, 27);
             textBox9.Name = "textBox9";
-            textBox9.Size = new Size(100, 23);
+            textBox9.Size = new Size(115, 23);
             textBox9.TabIndex = 13;
             // 
             // textBox10
             // 
             textBox10.Location = new Point(371, 70);
             textBox10.Name = "textBox10";
-            textBox10.Size = new Size(100, 23);
+            textBox10.Size = new Size(115, 23);
             textBox10.TabIndex = 14;
             // 
             // textBox11
             // 
             textBox11.Location = new Point(371, 112);
             textBox11.Name = "textBox11";
-            textBox11.Size = new Size(100, 23);
+            textBox11.Size = new Size(115, 23);
             textBox11.TabIndex = 15;
             // 
             // label6
@@ -238,11 +239,22 @@
             btnCadastrarCliente.Text = "Cadastrar";
             btnCadastrarCliente.UseVisualStyleBackColor = true;
             // 
+            // btnBusca
+            // 
+            btnBusca.Location = new Point(291, 153);
+            btnBusca.Name = "btnBusca";
+            btnBusca.Size = new Size(143, 23);
+            btnBusca.TabIndex = 23;
+            btnBusca.Text = "Buscar Endereço";
+            btnBusca.UseVisualStyleBackColor = true;
+            btnBusca.Click += btnBusca_Click;
+            // 
             // Cadastro_de_Clientes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnBusca);
             Controls.Add(btnCadastrarCliente);
             Controls.Add(label11);
             Controls.Add(label10);
@@ -297,5 +309,6 @@
         private Label label10;
         private Label label11;
         private Button btnCadastrarCliente;
+        private Button btnBusca;
     }
 }
