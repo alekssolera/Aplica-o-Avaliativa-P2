@@ -33,6 +33,7 @@
             label1 = new Label();
             textBox2 = new TextBox();
             label2 = new Label();
+            btnMudarSenha = new Button();
             SuspendLayout();
             // 
             // btnCadastrar
@@ -77,11 +78,22 @@
             label2.TabIndex = 4;
             label2.Text = "Senha:";
             // 
+            // btnMudarSenha
+            // 
+            btnMudarSenha.Location = new Point(381, 237);
+            btnMudarSenha.Name = "btnMudarSenha";
+            btnMudarSenha.Size = new Size(200, 42);
+            btnMudarSenha.TabIndex = 5;
+            btnMudarSenha.Text = "Mudar Senha";
+            btnMudarSenha.UseVisualStyleBackColor = true;
+            btnMudarSenha.Click += btnMudarSenha_Click;
+            // 
             // Cadastro_de_Usuário
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(997, 450);
+            Controls.Add(btnMudarSenha);
             Controls.Add(label2);
             Controls.Add(textBox2);
             Controls.Add(label1);
@@ -100,5 +112,6 @@
         private Label label1;
         private TextBox textBox2;
         private Label label2;
+        private Button btnMudarSenha;
     }
 }

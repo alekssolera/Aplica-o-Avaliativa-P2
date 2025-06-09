@@ -34,7 +34,7 @@ namespace Aplicação_Avaliativa_P2
             try
             {
                 string directory = Path.GetDirectoryName(userCsvFilePath);
-                if (Directory.Exists(directory))
+                if (!Directory.Exists(directory))
                 {
                     Directory.CreateDirectory(directory);
                 }
@@ -92,6 +92,18 @@ namespace Aplicação_Avaliativa_P2
                 {
                     writer.WriteLine($"{kvp.Key},{kvp.Value}");
                 }
+            }
+        }
+
+        private void btnMudarSenha_Click(object sender, EventArgs e)
+        {
+            string username = textBox1.Text.Trim();
+            string newPassword = textBox2.Text.Trim();
+
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(newPassword))
+            {
+                MessageBox.Show("Preencha usário  e nova senha.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
         }
     }
