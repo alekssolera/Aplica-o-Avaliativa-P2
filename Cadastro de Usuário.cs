@@ -84,5 +84,15 @@ namespace Aplicação_Avaliativa_P2
             }
             return users;
         }
+        private void SaveUsers(Dictionary<string, string> users)
+        {
+            using (var writer = new StreamWriter(userCsvFilePath, false))
+            {
+                foreach (var kvp in users)
+                {
+                    writer.WriteLine($"{kvp.Key},{kvp.Value}");
+                }
+            }
+        }
     }
 }
