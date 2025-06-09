@@ -34,7 +34,7 @@
             textBox2 = new TextBox();
             label2 = new Label();
             btnMudarSenha = new Button();
-            button1 = new Button();
+            btnExcluir = new Button();
             SuspendLayout();
             // 
             // btnCadastrar
@@ -89,21 +89,22 @@
             btnMudarSenha.UseVisualStyleBackColor = true;
             btnMudarSenha.Click += btnMudarSenha_Click;
             // 
-            // button1
+            // btnExcluir
             // 
-            button1.Location = new Point(381, 308);
-            button1.Name = "button1";
-            button1.Size = new Size(200, 37);
-            button1.TabIndex = 6;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            btnExcluir.Location = new Point(381, 308);
+            btnExcluir.Name = "btnExcluir";
+            btnExcluir.Size = new Size(200, 37);
+            btnExcluir.TabIndex = 6;
+            btnExcluir.Text = "Excluir Usuário";
+            btnExcluir.UseVisualStyleBackColor = true;
+            btnExcluir.Click += btnExcluir_Click;
             // 
             // Cadastro_de_Usuário
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(997, 450);
-            Controls.Add(button1);
+            Controls.Add(btnExcluir);
             Controls.Add(btnMudarSenha);
             Controls.Add(label2);
             Controls.Add(textBox2);
@@ -124,6 +125,6 @@
         private TextBox textBox2;
         private Label label2;
         private Button btnMudarSenha;
-        private Button button1;
+        private Button btnExcluir;
     }
 }

@@ -119,5 +119,34 @@ namespace Aplicação_Avaliativa_P2
                 MessageBox.Show("Usuário não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            string usernameToDelete = textBox1.Text.Trim();
+            if (string.IsNullOrEmpty(usernameToDelete))
+            {
+                MessageBox.Show("Por favor, insira o nome de usuário a ser excluído.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            var users = LoadUsers();
+
+            if (!users.ContainsKey(usernameToDelete))
+            {
+                MessageBox.Show("Usuário não encontado.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            
+            if (string.Equals(usernameToDelete, "ADMIN", StringComparison.OrdinalIgnoreCase))
+            {
+                MessageBox.Show("Não é possível excluir o usuário ADMIN.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            users.Remove(usernameToDelete);
+            SaveUsers(users);
+
+            MessageBox.Show("Usuário excluído com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            textBox1.Clear();
+            textBox2.Clear();
+        }
     }
 }
