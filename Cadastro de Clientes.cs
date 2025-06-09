@@ -15,6 +15,7 @@ namespace Aplicação_Avaliativa_P2
 {
     public partial class Cadastro_de_Clientes : Form
     {
+        private readonly string clientCsvFilePath = @"C:\Users\Pichau\Desktop\Avaliação P2\Clientes.csv";
         public Cadastro_de_Clientes()
         {
             InitializeComponent();
@@ -58,6 +59,20 @@ namespace Aplicação_Avaliativa_P2
                     return null;
                 }
             }
+        }
+
+        private void btnSalvarCliente_Click(object sender, EventArgs e)
+        {
+            string nome = textBox1.Text.Trim();
+            string cpf = textBox2.Text.Trim();
+            string email = textBox3.Text.Trim();
+            string telefone = textBox4.Text.Trim();
+            string cep = textBox6.Text.Trim();
+            string logradouro = textBox7.Text.Trim();
+            string numero = textBox8.Text.Trim();
+            string bairro = textBox9.Text.Trim();
+            string cidade = textBox10.Text.Trim();
+            string estado = textBox11.Text.Trim();
         }
     }
 }

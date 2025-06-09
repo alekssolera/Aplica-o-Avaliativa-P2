@@ -50,7 +50,7 @@
             label9 = new Label();
             label10 = new Label();
             label11 = new Label();
-            btnCadastrarCliente = new Button();
+            btnSalvarCliente = new Button();
             btnBusca = new Button();
             SuspendLayout();
             // 
@@ -230,14 +230,15 @@
             label11.TabIndex = 21;
             label11.Text = "Estado";
             // 
-            // btnCadastrarCliente
+            // btnSalvarCliente
             // 
-            btnCadastrarCliente.Location = new Point(12, 256);
-            btnCadastrarCliente.Name = "btnCadastrarCliente";
-            btnCadastrarCliente.Size = new Size(163, 65);
-            btnCadastrarCliente.TabIndex = 22;
-            btnCadastrarCliente.Text = "Cadastrar";
-            btnCadastrarCliente.UseVisualStyleBackColor = true;
+            btnSalvarCliente.Location = new Point(12, 256);
+            btnSalvarCliente.Name = "btnSalvarCliente";
+            btnSalvarCliente.Size = new Size(163, 65);
+            btnSalvarCliente.TabIndex = 22;
+            btnSalvarCliente.Text = "Cadastrar";
+            btnSalvarCliente.UseVisualStyleBackColor = true;
+            btnSalvarCliente.Click += btnSalvarCliente_Click;
             // 
             // btnBusca
             // 
@@ -255,7 +256,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(btnBusca);
-            Controls.Add(btnCadastrarCliente);
+            Controls.Add(btnSalvarCliente);
             Controls.Add(label11);
             Controls.Add(label10);
             Controls.Add(label9);
@@ -308,7 +309,7 @@
         private Label label9;
         private Label label10;
         private Label label11;
-        private Button btnCadastrarCliente;
+        private Button btnSalvarCliente;
         private Button btnBusca;
     }
 }
