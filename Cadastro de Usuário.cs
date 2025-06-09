@@ -18,22 +18,23 @@ namespace Aplicação_Avaliativa_P2
 
         private readonly string currentUsername;
         private readonly string currentPassword;
-        public Cadastro_de_Usuário(string loggedInUser, string loggedInPassword)
+        public Cadastro_de_Usuário(bool isAdmin, string username, string password)
         {
             InitializeComponent();
 
-            currentUsername = loggedInUser?.Trim() ?? string.Empty;
-            currentPassword = loggedInPassword?.Trim() ?? string.Empty;
+            currentUsername = username?.Trim() ?? string.Empty;
+            currentPassword = password?.Trim() ?? string.Empty;
 
-            bool isAdmin = IsAdminUser();
-            btnCadastrar.Enabled = isAdmin;
-            btnMudarSenha.Enabled = isAdmin;
-            btnExcluir.Enabled = isAdmin;
+            bool isCurrentUserAdmin = IsAdminUser(); 
+            btnCadastrar.Enabled = isCurrentUserAdmin;
+            btnMudarSenha.Enabled = isCurrentUserAdmin;
+            btnExcluir.Enabled = isCurrentUserAdmin;
         }
 
         private bool IsAdminUser()
         {
-            return string.Equals(currentUsername, "ADMIN", StringComparison.OrdinalIgnoreCase) && currentPassword == "123";
+            return string.Equals(currentUsername, "ADMIN", StringComparison.OrdinalIgnoreCase) 
+                && currentPassword == "123";
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)

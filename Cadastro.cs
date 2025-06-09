@@ -12,14 +12,21 @@ namespace Aplicação_Avaliativa_P2
 {
     public partial class Cadastro : Form
     {
+        private string password;
+        private string username;
+        private bool isAdmin;
+
         public Cadastro(bool isAdmin, string username, string password)
         {
             InitializeComponent();
+            this.isAdmin = isAdmin;
+            this.username = username;
+            this.password = password;
         }
 
         private void btnCadastroUsuario_Click(object sender, EventArgs e)
         {
-            Cadastro_de_Usuário cadastroUsuarioForm = new Cadastro_de_Usuário();
+            Cadastro_de_Usuário cadastroUsuarioForm = new Cadastro_de_Usuário(isAdmin, username, password);
             cadastroUsuarioForm.Show();
         }
 
