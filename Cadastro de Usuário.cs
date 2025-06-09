@@ -15,6 +15,9 @@ namespace Aplicação_Avaliativa_P2
     public partial class Cadastro_de_Usuário : Form
     {
         private readonly string userCsvFilePath = @"C:\Users\Pichau\Desktop\Avaliação P2\Usuarios.csv";
+
+        private readonly string currentUsername;
+        private readonly string currentPassword;
         public Cadastro_de_Usuário()
         {
             InitializeComponent();
