@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Reflection.Metadata.Ecma335;
 
 namespace Aplicação_Avaliativa_P2
 {
@@ -60,6 +61,28 @@ namespace Aplicação_Avaliativa_P2
                 MessageBox.Show($"Erro ao cadastrar usuário: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private Dictionary<string, string> LoadUsers()
+        {
+            var users = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
 
+            if (File.Exists(userCsvFilePath))
+            {
+                foreach (var line in File.ReadLines(userCsvFilePath))
+                {
+                    if (string.IsNullOrWhiteSpace(line)) continue;
+                    var parts = line.Split(',');
+                    if (parts.Length >= 2)
+                    {
+                        string existingUsername = parts[0].Trim();
+                        string existingPassword = parts[1].Trim();
+                        if (!users.ContainsKey(existingUsername))
+                        {
+                            users.Add(existingUsername, existingPassword);
+                        }
+                    }
+                }
+            }
+            return users;
+        }
     }
 }
