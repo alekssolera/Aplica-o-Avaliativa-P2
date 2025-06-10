@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Aplicação_Avaliativa_P2
 {
-    public partial class Cadastro_de_Produtos: Form
+    public partial class Cadastro_de_Produtos : Form
     {
         public Cadastro_de_Produtos()
         {
             InitializeComponent();
+        }
+
+        private void btnProduto_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
