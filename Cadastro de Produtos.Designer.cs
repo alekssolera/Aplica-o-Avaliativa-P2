@@ -36,6 +36,8 @@
             label3 = new Label();
             btnProduto = new Button();
             lblTotalProduto = new Label();
+            textBox4 = new TextBox();
+            label4 = new Label();
             SuspendLayout();
             // 
             // textBox1
@@ -72,7 +74,7 @@
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(12, 144);
+            textBox3.Location = new Point(12, 202);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(149, 23);
             textBox3.TabIndex = 4;
@@ -80,7 +82,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(12, 126);
+            label3.Location = new Point(12, 184);
             label3.Name = "label3";
             label3.Size = new Size(124, 15);
             label3.TabIndex = 5;
@@ -88,7 +90,7 @@
             // 
             // btnProduto
             // 
-            btnProduto.Location = new Point(12, 198);
+            btnProduto.Location = new Point(12, 242);
             btnProduto.Name = "btnProduto";
             btnProduto.Size = new Size(149, 31);
             btnProduto.TabIndex = 6;
@@ -99,17 +101,35 @@
             // lblTotalProduto
             // 
             lblTotalProduto.AutoSize = true;
-            lblTotalProduto.Location = new Point(12, 276);
+            lblTotalProduto.Location = new Point(12, 306);
             lblTotalProduto.Name = "lblTotalProduto";
             lblTotalProduto.Size = new Size(170, 15);
             lblTotalProduto.TabIndex = 7;
             lblTotalProduto.Text = "Total de Produtos Cadastrados:";
+            // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(12, 148);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(149, 23);
+            textBox4.TabIndex = 8;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(12, 130);
+            label4.Name = "label4";
+            label4.Size = new Size(72, 15);
+            label4.TabIndex = 9;
+            label4.Text = "Quantidade:";
             // 
             // Cadastro_de_Produtos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label4);
+            Controls.Add(textBox4);
             Controls.Add(lblTotalProduto);
             Controls.Add(btnProduto);
             Controls.Add(label3);
@@ -134,5 +154,7 @@
         private Label label3;
         private Button btnProduto;
         private Label lblTotalProduto;
+        private TextBox textBox4;
+        private Label label4;
     }
 }

@@ -26,7 +26,7 @@ namespace Aplicação_Avaliativa_P2
             string nome = textBox1.Text.Trim();
             string preco = textBox2.Text.Trim();
             string descricao = textBox3.Text.Trim();
-            string quantidade = lblTotalProduto.Text.Trim();
+            string quantidade = textBox4.Text.Trim();
 
             if (string.IsNullOrEmpty(nome) || string.IsNullOrEmpty(preco) || string.IsNullOrEmpty(descricao) || string.IsNullOrEmpty(quantidade))
             {
@@ -84,6 +84,7 @@ namespace Aplicação_Avaliativa_P2
             textBox1.Clear();
             textBox2.Clear();
             textBox3.Clear();
+            textBox4.Clear();
         }
 
         private void AtualizarContagemProdutos()
