@@ -13,8 +13,8 @@ namespace Aplicação_Avaliativa_P2
     public partial class Cadastro_de_Pedidos : Form
     {
         private readonly string clientesCsvFilePath = @"C:\Users\Pichau\Desktop\Avaliação P2\Clientes.csv";
-        private readonly string produtosCsvFilePath = @"C:\Users\Pichau\Desktop\Avaliação P2\Produtos.csv";
-        private readonly string pedidosCsvFilePath = @"C:\Users\Pichau\Desktop\Avaliação P2\pedidos\Pedidos.csv";
+        private readonly string produtosCsvFilePath = @"C:\Users\Pichau\Desktop\Avaliação P2\itensPedido\Produtos.csv";
+        private readonly string pedidosCsvFilePath = @"C:\Users\Pichau\Desktop\Avaliação P2\idPedidos\Pedidos.csv";
 
 
         private Dictionary<string, string> clientes = new Dictionary<string, string>();

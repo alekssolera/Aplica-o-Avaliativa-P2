@@ -13,8 +13,8 @@ namespace Aplicação_Avaliativa_P2
     public partial class Consulta_de_Pedidos : Form
     {
         private readonly string clientesCsvFilePath = @"C:\Users\Pichau\Desktop\Avaliação P2\Clientes.csv";
-        private readonly string pedidosCsvFilePath = @"C:\Users\Pichau\Desktop\Avaliação P2\pedidos\Pedidos.csv";
-        private readonly string itensPedidosDirectory = @"C:\Users\Pichau\Desktop\Avaliação P2\pedidos";
+        private readonly string pedidosCsvFilePath = @"C:\Users\Pichau\Desktop\Avaliação P2\idPedidos\Pedidos.csv";
+        private readonly string itensPedidosDirectory = @"C:\Users\Pichau\Desktop\Avaliação P2\itensPedido";
 
         private Dictionary<string, string> clientes = new Dictionary<string, string>();
         private List<Pedido> pedidos = new List<Pedido>();
@@ -104,7 +104,7 @@ namespace Aplicação_Avaliativa_P2
             try
             {
                 listView2.Items.Clear();
-                string itensPedidosFilePath = Path.Combine(itensPedidosDirectory, $"{idPedido}.csv");
+                string itensPedidosFilePath = Path.Combine(itensPedidosDirectory, $"itens_pedido_{idPedido}.csv");
 
                 if (File.Exists(itensPedidosFilePath))
                 {
@@ -121,7 +121,7 @@ namespace Aplicação_Avaliativa_P2
                             decimal precoUnitario = decimal.Parse(valores[2].Trim().Replace("\"", ""));
                             decimal totalItem = decimal.Parse(valores[3].Trim().Replace("\"", ""));
 
-                            listView1.Items.Add(new ListViewItem(new[] { produto, quantidade.ToString(), precoUnitario.ToString("C"), totalItem.ToString("C") }));
+                            listView2.Items.Add(new ListViewItem(new[] { produto, quantidade.ToString(), precoUnitario.ToString("C"), totalItem.ToString("C") }));
                             totalPedido += totalItem;
                         }
                     }
