@@ -22,7 +22,21 @@ namespace Aplicação_Avaliativa_P2
         public Consulta_de_Pedidos()
         {
             InitializeComponent();
+            listView1.SelectedIndexChanged += listView1_SelectedIndexChanged;
+            ConfigurarListViewItensPedido();
             CarregarClientes();
+        }
+
+        private void ConfigurarListViewItensPedido()
+        {
+            listView2.View = View.Details;
+            listView2.Columns.Clear();
+            listView2.Columns.Add("Produto", 150);
+            listView2.Columns.Add("Quantidade", 100);
+            listView2.Columns.Add("Preço Unitário", 100);
+            listView2.Columns.Add("Total Item", 100);
+            listView2.FullRowSelect = true;
+            listView2.GridLines = true;
         }
 
         private void CarregarClientes()
