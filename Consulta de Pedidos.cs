@@ -25,7 +25,28 @@ namespace Aplicação_Avaliativa_P2
             CarregarClientes();
         }
 
-
+        private void CarregarClientes()
+        {
+            try
+            {
+                if (File.Exists(clientesCsvFilePath))
+                {
+                    var linhas = File.ReadAllLines(clientesCsvFilePath).Skip(1);
+                    foreach (var linha in linhas)
+                    {
+                        var valores = linha.Split(',');
+                        if (valores.Length > 1)
+                        {
+                            clientes[valores[1].Trim().Replace("\"", "")] = valores[0].Trim().Replace("\"", "");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show($"Erro ao carregar clientes: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         private void btnConsulta_Click(object sender, EventArgs e)
         {
 
