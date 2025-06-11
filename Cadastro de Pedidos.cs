@@ -75,6 +75,22 @@ namespace Aplicação_Avaliativa_P2
             }
         }
 
+        private void CarregarProdutosNaComboBox()
+        {
+            try
+            {
+                comboBox1.Items.Clear();
+                foreach (var produto in produtos.Keys)
+                {
+                    comboBox1.Items.Add(produto);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao carregar produtos na ComboBox: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void BtnBuscaCpf_Click(object sender, EventArgs e)
         {
            
