@@ -62,7 +62,7 @@ namespace Aplicação_Avaliativa_P2
                     foreach (var linha in linhas)
                     {
                         var valores = linha.Split(',');
-                        if (valores.Length > 2 && decimal.TryParse(valores[2].Trim( ).Replace("\"", ""), out decimal preco))
+                        if (valores.Length > 2 && decimal.TryParse(valores[2].Trim().Replace("\"", ""), out decimal preco))
                         {
                             produtos[valores[0].Trim().Replace("\"", "")] = preco;
                         }
@@ -103,6 +103,32 @@ namespace Aplicação_Avaliativa_P2
                 MessageBox.Show("CPF não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 textBox2.Clear();
             }
+        }
+
+        private void btnAdicionarPedido_Click(object sender, EventArgs e)
+        {
+            string produto = comboBox1.SelectedItem as string;
+            if (string.IsNullOrEmpty(produto))
+            {
+                MessageBox.Show("Selecione um produto.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (!produtos.ContainsKey(produto))
+            {
+                MessageBox.Show("Produto não encontrado.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (!int.TryParse(textBox3.Text.Trim(), out int quantidade) || quantidade <= 0)
+            {
+                MessageBox.Show("Quantidade inválida.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            decimal precoUnitario = produtos[produto];
+            decimal totalItem = precoUnitario * quantidade;
+
+            itensPedido.Add(new OrderItem { produto = produto, Quantidade = quantidade, PrecoUnitario = precoUnitario, TotalItem = totalItem });
+            AtualizarListaItens();
+            textBox3.Clear();
         }
     }
 }

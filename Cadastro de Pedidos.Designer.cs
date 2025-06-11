@@ -133,6 +133,7 @@
             btnAdicionarPedido.TabIndex = 10;
             btnAdicionarPedido.Text = "Adicionar ao Pedido";
             btnAdicionarPedido.UseVisualStyleBackColor = true;
+            btnAdicionarPedido.Click += btnAdicionarPedido_Click;
             // 
             // btnFinalizarPedido
             // 
