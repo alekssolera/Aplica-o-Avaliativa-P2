@@ -49,7 +49,14 @@ namespace Aplicação_Avaliativa_P2
         }
         private void btnConsulta_Click(object sender, EventArgs e)
         {
-
+            string cpf  = textBox1.Text.Trim();
+            if (!clientes.ContainsKey(cpf))
+            {
+                MessageBox.Show("Cliente não encontrado.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            lblNomeCliente.Text = clientes[cpf];
+            CarregarPedidos(cpf);
         }
     }
 }
