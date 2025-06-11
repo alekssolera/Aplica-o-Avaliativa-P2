@@ -12,9 +12,10 @@ namespace Aplicação_Avaliativa_P2
 {
     public partial class Cadastro_de_Pedidos : Form
     {
-        private readonly string clientesCsvFilePAth = @"C:\Users\Usuario\Documents\GitHub\Aplicação_Avaliativa_P2\Aplicação_Avaliativa_P2\Clientes.csv";
-        private readonly string produtosCsvFilePath = @"C:\Users\Usuario\Documents\GitHub\Aplicação_Avaliativa_P2\Aplicação_Avaliativa_P2\Produtos.csv";
-        private readonly string pedidosCsvFilePath = @"C:\Users\Usuario\Documents\GitHub\Aplicação_Avaliativa_P2\Aplicação_Avaliativa_P2\Pedidos.csv";
+        private readonly string clientesCsvFilePath = @"C:\Users\Pichau\Desktop\Avaliação P2\Clientes.csv";
+        private readonly string produtosCsvFilePath = @"C:\Users\Pichau\Desktop\Avaliação P2\Produtos.csv";
+        private readonly string pedidosCsvFilePath = @"C:\Users\Pichau\Desktop\Avaliação P2\Pedidos.csv";
+
 
         private Dictionary<string, string> clientes = new Dictionary<string, string>();
         private Dictionary<string, decimal> produtos = new Dictionary<string, decimal>();
@@ -33,9 +34,9 @@ namespace Aplicação_Avaliativa_P2
         {
             try
             {
-                if (File.Exists(clientesCsvFilePAth))
+                if (File.Exists(clientesCsvFilePath))
                 {
-                    var linhas = File.ReadAllLines(clientesCsvFilePAth).Skip(1);
+                    var linhas = File.ReadAllLines(clientesCsvFilePath).Skip(1);
                     foreach (var linha in linhas)
                     {
                         var valores = linha.Split(',');
