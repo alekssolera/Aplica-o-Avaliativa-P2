@@ -137,5 +137,13 @@ namespace Aplicação_Avaliativa_P2
                 MessageBox.Show($"Erro ao carregar itens do pedido: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        public class Pedido
+        {
+            public string IdPedido { get; set; }
+            public string CpfCliente { get; set; }
+            public DateTime DataPedido { get; set; }
+            public decimal TotalPedido { get; set; }
+        }
     }
 }
