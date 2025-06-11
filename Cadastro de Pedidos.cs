@@ -181,7 +181,7 @@ namespace Aplicação_Avaliativa_P2
                         itensWriter.WriteLine("Produto,Quantidade,PrecoUnitario,TotalItem");
                         foreach (var item in itensPedido)
                         {
-                            string  linhaItem = $"\"{item.produto}\",\"{item.Quantidade}\",\"{item.PrecoUnitario}\",\"{item.TotalItem}\"";
+                            string linhaItem = $"\"{item.produto}\",\"{item.Quantidade}\",\"{item.PrecoUnitario}\",\"{item.TotalItem}\"";
                             itensWriter.WriteLine(linhaItem);
                         }
                     }
@@ -197,7 +197,7 @@ namespace Aplicação_Avaliativa_P2
 
         private void LimparPedido()
         {
-           textBox1.Clear();
+            textBox1.Clear();
             textBox2.Clear();
             itensPedido.Clear();
             AtualizarListaItens();
@@ -209,6 +209,12 @@ namespace Aplicação_Avaliativa_P2
             public int Quantidade { get; set; }
             public decimal PrecoUnitario { get; set; }
             public decimal TotalItem { get; set; }
+        }
+
+        private void btnConsultaPedidos_Click(object sender, EventArgs e)
+        {
+            Consulta_de_Pedidos consulta_De_Pedidos = new Consulta_de_Pedidos();
+            consulta_De_Pedidos.ShowDialog();
         }
     }
 }
