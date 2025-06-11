@@ -193,5 +193,13 @@ namespace Aplicação_Avaliativa_P2
                 MessageBox.Show($"Erro ao salvar o pedido: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void LimparPedido()
+        {
+           textBox1.Clear();
+            textBox2.Clear();
+            itensPedido.Clear();
+            AtualizarListaItens();
+        }
     }
 }
