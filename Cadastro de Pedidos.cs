@@ -93,7 +93,16 @@ namespace Aplicação_Avaliativa_P2
 
         private void BtnBuscaCpf_Click(object sender, EventArgs e)
         {
-           
+            string cpf = textBox1.Text.Trim();
+            if (clientes.ContainsKey(cpf))
+            {
+                textBox2.Text = clientes[cpf];
+            }
+            else
+            {
+                MessageBox.Show("CPF não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textBox2.Clear();
+            }
         }
     }
 }
