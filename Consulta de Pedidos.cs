@@ -140,10 +140,10 @@ namespace Aplicação_Avaliativa_P2
 
         public class Pedido
         {
-            public string IdPedido { get; set; }
-            public string CpfCliente { get; set; }
-            public DateTime DataPedido { get; set; }
-            public decimal TotalPedido { get; set; }
+            public string idPedido { get; set; }
+            public string cpfCliente { get; set; }
+            public DateTime dataPedido { get; set; }
+            public decimal totalPedido { get; set; }
         }
     }
 }
