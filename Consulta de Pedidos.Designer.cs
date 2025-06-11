@@ -28,12 +28,66 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Consulta_de_Pedidos";
+            label1 = new Label();
+            textBox1 = new TextBox();
+            btnConsulta = new Button();
+            lblNomeCliente = new Label();
+            SuspendLayout();
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(3, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(160, 15);
+            label1.TabIndex = 0;
+            label1.Text = "Informe o CPF para consulta:";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(3, 27);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(160, 23);
+            textBox1.TabIndex = 1;
+            // 
+            // btnConsulta
+            // 
+            btnConsulta.Location = new Point(27, 56);
+            btnConsulta.Name = "btnConsulta";
+            btnConsulta.Size = new Size(95, 32);
+            btnConsulta.TabIndex = 2;
+            btnConsulta.Text = "Consultar";
+            btnConsulta.UseVisualStyleBackColor = true;
+            // 
+            // lblNomeCliente
+            // 
+            lblNomeCliente.AutoSize = true;
+            lblNomeCliente.Location = new Point(12, 115);
+            lblNomeCliente.Name = "lblNomeCliente";
+            lblNomeCliente.Size = new Size(47, 15);
+            lblNomeCliente.TabIndex = 3;
+            lblNomeCliente.Text = "Cliente:";
+            // 
+            // Consulta_de_Pedidos
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(lblNomeCliente);
+            Controls.Add(btnConsulta);
+            Controls.Add(textBox1);
+            Controls.Add(label1);
+            Name = "Consulta_de_Pedidos";
+            Text = "Consulta_de_Pedidos";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label label1;
+        private TextBox textBox1;
+        private Button btnConsulta;
+        private Label lblNomeCliente;
     }
 }
