@@ -32,6 +32,7 @@
             textBox1 = new TextBox();
             btnConsulta = new Button();
             lblNomeCliente = new Label();
+            listView1 = new ListView();
             SuspendLayout();
             // 
             // label1
@@ -58,6 +59,7 @@
             btnConsulta.TabIndex = 2;
             btnConsulta.Text = "Consultar";
             btnConsulta.UseVisualStyleBackColor = true;
+            btnConsulta.Click += btnConsulta_Click;
             // 
             // lblNomeCliente
             // 
@@ -68,11 +70,20 @@
             lblNomeCliente.TabIndex = 3;
             lblNomeCliente.Text = "Cliente:";
             // 
+            // listView1
+            // 
+            listView1.Location = new Point(12, 133);
+            listView1.Name = "listView1";
+            listView1.Size = new Size(492, 146);
+            listView1.TabIndex = 4;
+            listView1.UseCompatibleStateImageBehavior = false;
+            // 
             // Consulta_de_Pedidos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(listView1);
             Controls.Add(lblNomeCliente);
             Controls.Add(btnConsulta);
             Controls.Add(textBox1);
@@ -89,5 +100,6 @@
         private TextBox textBox1;
         private Button btnConsulta;
         private Label lblNomeCliente;
+        private ListView listView1;
     }
 }
