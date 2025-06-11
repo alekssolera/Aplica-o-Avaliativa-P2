@@ -36,9 +36,9 @@ namespace Aplicação_Avaliativa_P2
             if (endereco != null && endereco.Erro != true)
             {
                 textBox7.Text = endereco.Logradouro;
-                textBox8.Text = endereco.Bairro;
-                textBox9.Text = endereco.Localidade;
-                textBox10.Text = endereco.Uf;
+                textBox9.Text = endereco.Bairro;
+                textBox10.Text = endereco.Localidade;
+                textBox11.Text = endereco.Uf;
             }
             else
             {
