@@ -16,9 +16,10 @@ namespace Aplicação_Avaliativa_P2
         private readonly string produtosCsvFilePath = @"C:\Users\Usuario\Documents\GitHub\Aplicação_Avaliativa_P2\Aplicação_Avaliativa_P2\Produtos.csv";
         private readonly string pedidosCsvFilePath = @"C:\Users\Usuario\Documents\GitHub\Aplicação_Avaliativa_P2\Aplicação_Avaliativa_P2\Pedidos.csv";
 
-        private Dictionarystring, string> clientes = new Dictionary<string, string>();
-        private Dictionarystring, decimal> produtos = new Dictionary<string, decimal>();
-        private ListOrderItem> itensPedido = new ListOrderItem();
+        private Dictionary<string, string> clientes = new Dictionary<string, string>();
+        private Dictionary<string, decimal> produtos = new Dictionary<string, decimal>();
+        private List<OrderItem> itensPedido = new List<OrderItem>();
+
         public Cadastro_de_Pedidos()
         {
             InitializeComponent();
@@ -45,11 +46,38 @@ namespace Aplicação_Avaliativa_P2
                     }
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao carregar clientes: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void CarregarProdutos()
+        {
+            try
+            {
+                if (File.Exists(produtosCsvFilePath))
+                {
+                    var linhas = File.ReadAllLines(produtosCsvFilePath).Skip(1);
+                    foreach (var linha in linhas)
+                    {
+                        var valores = linha.Split(',');
+                        if (valores.Length > 2 && decimal.TryParse(valores[2].Trim( ).Replace("\"", ""), out decimal preco))
+                        {
+                            produtos[valores[0].Trim().Replace("\"", "")] = preco;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao carregar produtos: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void BtnBuscaCpf_Click(object sender, EventArgs e)
         {
-
+           
         }
     }
 }
