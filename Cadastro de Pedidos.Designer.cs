@@ -38,8 +38,8 @@
             label3 = new Label();
             textBox3 = new TextBox();
             label4 = new Label();
-            button1 = new Button();
-            button2 = new Button();
+            btnAdicionarPedido = new Button();
+            btnFinalizarPedido = new Button();
             SuspendLayout();
             // 
             // textBox1
@@ -124,31 +124,31 @@
             label4.TabIndex = 9;
             label4.Text = "Quantidade:";
             // 
-            // button1
+            // btnAdicionarPedido
             // 
-            button1.Location = new Point(362, 162);
-            button1.Name = "button1";
-            button1.Size = new Size(184, 23);
-            button1.TabIndex = 10;
-            button1.Text = "Adicionar ao Pedido";
-            button1.UseVisualStyleBackColor = true;
+            btnAdicionarPedido.Location = new Point(362, 162);
+            btnAdicionarPedido.Name = "btnAdicionarPedido";
+            btnAdicionarPedido.Size = new Size(184, 23);
+            btnAdicionarPedido.TabIndex = 10;
+            btnAdicionarPedido.Text = "Adicionar ao Pedido";
+            btnAdicionarPedido.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnFinalizarPedido
             // 
-            button2.Location = new Point(649, 355);
-            button2.Name = "button2";
-            button2.Size = new Size(139, 42);
-            button2.TabIndex = 11;
-            button2.Text = "Finalizar Pedido";
-            button2.UseVisualStyleBackColor = true;
+            btnFinalizarPedido.Location = new Point(649, 355);
+            btnFinalizarPedido.Name = "btnFinalizarPedido";
+            btnFinalizarPedido.Size = new Size(139, 42);
+            btnFinalizarPedido.TabIndex = 11;
+            btnFinalizarPedido.Text = "Finalizar Pedido";
+            btnFinalizarPedido.UseVisualStyleBackColor = true;
             // 
             // Cadastro_de_Pedidos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btnFinalizarPedido);
+            Controls.Add(btnAdicionarPedido);
             Controls.Add(label4);
             Controls.Add(textBox3);
             Controls.Add(label3);
@@ -177,7 +177,7 @@
         private Label label3;
         private TextBox textBox3;
         private Label label4;
-        private Button button1;
-        private Button button2;
+        private Button btnAdicionarPedido;
+        private Button btnFinalizarPedido;
     }
 }
