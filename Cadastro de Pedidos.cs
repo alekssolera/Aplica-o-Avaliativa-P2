@@ -201,5 +201,13 @@ namespace Aplicação_Avaliativa_P2
             itensPedido.Clear();
             AtualizarListaItens();
         }
+
+        public class OrderItem
+        {
+            public string produto { get; set; }
+            public int Quantidade { get; set; }
+            public decimal PrecoUnitario { get; set; }
+            public decimal TotalItem { get; set; }
+        }
     }
 }
