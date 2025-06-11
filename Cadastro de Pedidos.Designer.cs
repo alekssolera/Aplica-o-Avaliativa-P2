@@ -82,6 +82,7 @@
             BtnBuscaCpf.TabIndex = 4;
             BtnBuscaCpf.Text = "Buscar CPF";
             BtnBuscaCpf.UseVisualStyleBackColor = true;
+            BtnBuscaCpf.Click += BtnBuscaCpf_Click;
             // 
             // listBox1
             // 

@@ -55,7 +55,7 @@ namespace Aplicação_Avaliativa_P2
                     string url = $"https://viacep.com.br/ws/{cep}/json/";
                     var response = await http.GetStringAsync(url);
 
-                    var endereco = JsonSerializer.Deserialize<ViaCepResponse>(response, 
+                    var endereco = JsonSerializer.Deserialize<ViaCepResponse>(response,
                         new JsonSerializerOptions
                         {
                             PropertyNameCaseInsensitive = true
@@ -145,5 +145,7 @@ namespace Aplicação_Avaliativa_P2
             public string? Uf { get; set; }
             public bool? Erro { get; set; }
         }
+
+        
     }
 }

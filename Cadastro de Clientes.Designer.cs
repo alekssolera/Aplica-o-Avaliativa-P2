@@ -281,8 +281,15 @@
             Controls.Add(textBox1);
             Name = "Cadastro_de_Clientes";
             Text = "Cadastro_de_Clientes";
+            Load += Cadastro_de_Clientes_Load;
             ResumeLayout(false);
             PerformLayout();
+        }
+
+        // Add the missing event handler method for Cadastro_de_Clientes_Load  
+        private void Cadastro_de_Clientes_Load(object sender, EventArgs e)
+        {
+            // You can add any initialization logic here if needed  
         }
 
         #endregion
