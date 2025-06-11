@@ -142,5 +142,56 @@ namespace Aplicação_Avaliativa_P2
             }
             lblTotalPedido.Text = $"Total do Pedido: {totalPedido:C}";
         }
+
+        private void btnFinalizarPedido_Click(object sender, EventArgs e)
+        {
+            string cpf = textBox1.Text.Trim();
+            if (!clientes.ContainsKey(cpf))
+            {
+                MessageBox.Show("CPF do cliente não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (itensPedido.Count == 0)
+            {
+                MessageBox.Show("Nenhum item adicionado ao pedido.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                string idPedido = Guid.NewGuid().ToString();
+
+                string dir = Path.GetDirectoryName(pedidosCsvFilePath);
+                if (!Directory.Exists(dir))
+                {
+                    Directory.CreateDirectory(dir);
+                }
+
+                using (var writer = new StreamWriter(pedidosCsvFilePath, true, System.Text.Encoding.UTF8))
+                {
+                    decimal totalPedido = itensPedido.Sum(item => item.TotalItem);
+                    string linha = $"\"{idPedido}\",\"{cpf}\",\"{DateTime.Now}\",\"{totalPedido}\"";
+                    writer.WriteLine(linha);
+
+                    string itensFilePath = Path.Combine(dir, $"itens_pedido_{idPedido}.csv");
+                    using (var itensWriter = new StreamWriter(itensFilePath, false, System.Text.Encoding.UTF8))
+                    {
+                        itensWriter.WriteLine("Produto,Quantidade,PrecoUnitario,TotalItem");
+                        foreach (var item in itensPedido)
+                        {
+                            string  linhaItem = $"\"{item.produto}\",\"{item.Quantidade}\",\"{item.PrecoUnitario}\",\"{item.TotalItem}\"";
+                            itensWriter.WriteLine(linhaItem);
+                        }
+                    }
+                }
+                MessageBox.Show("Pedido salvo com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LimparPedido();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao salvar o pedido: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
