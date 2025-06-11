@@ -14,7 +14,7 @@ namespace Aplicação_Avaliativa_P2
     {
         private readonly string clientesCsvFilePath = @"C:\Users\Pichau\Desktop\Avaliação P2\Clientes.csv";
         private readonly string produtosCsvFilePath = @"C:\Users\Pichau\Desktop\Avaliação P2\Produtos.csv";
-        private readonly string pedidosCsvFilePath = @"C:\Users\Pichau\Desktop\Avaliação P2\Pedidos.csv";
+        private readonly string pedidosCsvFilePath = @"C:\Users\Pichau\Desktop\Avaliação P2\pedidos\Pedidos.csv";
 
 
         private Dictionary<string, string> clientes = new Dictionary<string, string>();
