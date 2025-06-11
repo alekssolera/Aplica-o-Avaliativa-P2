@@ -14,7 +14,7 @@ namespace Aplicação_Avaliativa_P2
     {
         private readonly string clientesCsvFilePath = @"C:\Users\Pichau\Desktop\Avaliação P2\Clientes.csv";
         private readonly string produtosCsvFilePath = @"C:\Users\Pichau\Desktop\Avaliação P2\Produtos.csv";
-        private readonly string pastaPedidos = @"C:\Users\Pichau\Desktop\Avaliação P2\Pedidos";
+        private readonly string pedidosCsvFilePath = @"C:\Users\Pichau\Desktop\Avaliação P2\Pedidos.csv";
 
 
         private Dictionary<string, string> clientes = new Dictionary<string, string>();
@@ -163,13 +163,13 @@ namespace Aplicação_Avaliativa_P2
             {
                 string idPedido = Guid.NewGuid().ToString();
 
-                string dir = Path.GetDirectoryName(pastaPedidos);
+                string dir = Path.GetDirectoryName(pedidosCsvFilePath);
                 if (!Directory.Exists(dir))
                 {
                     Directory.CreateDirectory(dir);
                 }
 
-                using (var writer = new StreamWriter(pastaPedidos, true, System.Text.Encoding.UTF8))
+                using (var writer = new StreamWriter(pedidosCsvFilePath, true, System.Text.Encoding.UTF8))
                 {
                     decimal totalPedido = itensPedido.Sum(item => item.TotalItem);
                     string linha = $"\"{idPedido}\",\"{cpf}\",\"{DateTime.Now}\",\"{totalPedido}\"";

@@ -117,12 +117,21 @@ namespace Aplicação_Avaliativa_P2
                         if (valores.Length > 3)
                         {
                             string produto = valores[0].Trim().Replace("\"", "");
-                            int quantidade = int.Parse(valores[1].Trim().Replace("\"", ""));
-                            decimal precoUnitario = decimal.Parse(valores[2].Trim().Replace("\"", ""));
-                            decimal totalItem = decimal.Parse(valores[3].Trim().Replace("\"", ""));
+                            string quantidadeStr = (valores[1].Trim().Replace("\"", ""));
+                            string precoUnitario = (valores[2].Trim().Replace("\"", ""));
+                            string totalItem = (valores[3].Trim().Replace("\"", ""));
 
-                            listView2.Items.Add(new ListViewItem(new[] { produto, quantidade.ToString(), precoUnitario.ToString("C"), totalItem.ToString("C") }));
-                            totalPedido += totalItem;
+                            if (int.TryParse(quantidadeStr , out int quantidade) &&
+                                decimal.TryParse(precoUnitario, out decimal precoUnitarioStr) &&
+                                decimal.TryParse(totalItem, out decimal totalItemStr))
+                            {
+                                ListViewItem item = new ListViewItem(produto);
+                                item.SubItems.Add(quantidade.ToString());
+                                item.SubItems.Add(precoUnitarioStr.ToString("C"));
+                                item.SubItems.Add(totalItemStr.ToString("C"));
+                                listView2.Items.Add(item);
+                                totalPedido += totalItemStr;
+                            }
                         }
                     }
                     lblTotalPedido.Text = $"Total do Pedido: {totalPedido:C}";
@@ -130,6 +139,8 @@ namespace Aplicação_Avaliativa_P2
                 else
                 {
                     MessageBox.Show("Itens do pedido não encontrados.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    listView2.Items.Clear();
+                    lblTotalPedido.Text = "Total do Pedido: R$ 0,00";
                 }
             }
             catch (Exception ex)
