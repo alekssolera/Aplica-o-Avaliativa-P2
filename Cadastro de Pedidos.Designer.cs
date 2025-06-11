@@ -40,6 +40,7 @@
             label4 = new Label();
             btnAdicionarPedido = new Button();
             btnFinalizarPedido = new Button();
+            lblTotalPedido = new Label();
             SuspendLayout();
             // 
             // textBox1
@@ -144,11 +145,21 @@
             btnFinalizarPedido.Text = "Finalizar Pedido";
             btnFinalizarPedido.UseVisualStyleBackColor = true;
             // 
+            // lblTotalPedido
+            // 
+            lblTotalPedido.AutoSize = true;
+            lblTotalPedido.Location = new Point(12, 352);
+            lblTotalPedido.Name = "lblTotalPedido";
+            lblTotalPedido.Size = new Size(92, 15);
+            lblTotalPedido.TabIndex = 12;
+            lblTotalPedido.Text = "Total do Pedido:";
+            // 
             // Cadastro_de_Pedidos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(lblTotalPedido);
             Controls.Add(btnFinalizarPedido);
             Controls.Add(btnAdicionarPedido);
             Controls.Add(label4);
@@ -181,5 +192,6 @@
         private Label label4;
         private Button btnAdicionarPedido;
         private Button btnFinalizarPedido;
+        private Label lblTotalPedido;
     }
 }

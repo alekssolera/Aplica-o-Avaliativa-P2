@@ -130,5 +130,17 @@ namespace Aplicação_Avaliativa_P2
             AtualizarListaItens();
             textBox3.Clear();
         }
+
+        private void AtualizarListaItens()
+        {
+            listBox1.Items.Clear();
+            decimal totalPedido = 0;
+            foreach (var item in itensPedido)
+            {
+                listBox1.Items.Add($"{item.produto} - Qtd: {item.Quantidade} X Preço Unitário: {item.PrecoUnitario:C} = Total: {item.TotalItem:C}");
+                totalPedido += item.TotalItem;
+            }
+            lblTotalPedido.Text = $"Total do Pedido: {totalPedido:C}";
+        }
     }
 }
