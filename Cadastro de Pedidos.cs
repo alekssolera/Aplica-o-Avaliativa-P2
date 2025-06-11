@@ -13,8 +13,8 @@ namespace Aplicação_Avaliativa_P2
     public partial class Cadastro_de_Pedidos : Form
     {
         private readonly string clientesCsvFilePath = @"C:\Users\Pichau\Desktop\Avaliação P2\Clientes.csv";
-        private readonly string produtosCsvFilePath = @"C:\Users\Pichau\Desktop\Avaliação P2\itensPedido\Produtos.csv";
-        private readonly string pedidosCsvFilePath = @"C:\Users\Pichau\Desktop\Avaliação P2\idPedidos\Pedidos.csv";
+        private readonly string produtosCsvFilePath = @"C:\Users\Pichau\Desktop\Avaliação P2\Produtos.csv";
+        private readonly string pedidosCsvFilePath = @"C:\Users\Pichau\Desktop\Avaliação P2\Pedidos.csv";
 
 
         private Dictionary<string, string> clientes = new Dictionary<string, string>();
@@ -175,8 +175,8 @@ namespace Aplicação_Avaliativa_P2
                     string linha = $"\"{idPedido}\",\"{cpf}\",\"{DateTime.Now}\",\"{totalPedido}\"";
                     writer.WriteLine(linha);
 
-                    string itensFilePath = Path.Combine(dir, $"itens_pedido_{idPedido}.csv");
-                    using (var itensWriter = new StreamWriter(itensFilePath, false, System.Text.Encoding.UTF8))
+                    string itensPedidoFilePath = Path.Combine(dir, $"itens_pedido_{idPedido}.csv");
+                    using (var itensWriter = new StreamWriter(itensPedidoFilePath, false, System.Text.Encoding.UTF8))
                     {
                         itensWriter.WriteLine("Produto,Quantidade,PrecoUnitario,TotalItem");
                         foreach (var item in itensPedido)
