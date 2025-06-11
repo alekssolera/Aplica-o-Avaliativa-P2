@@ -86,7 +86,7 @@ namespace Aplicação_Avaliativa_P2
                     foreach (var linha in linhas)
                     {
                         var valores = linha.Split(',');
-                        if (valores.Length > 1 && valores[1].Trim().Replace("\"", "") == cpf)
+                        if (valores.Length > 3 && valores[1].Trim().Replace("\"", "") == cpf)
                         {
                             string idPedido = valores[0].Trim().Replace("\"", "");
                             DateTime dataPedido = DateTime.Parse(valores[2].Trim().Replace("\"", ""));
