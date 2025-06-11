@@ -58,5 +58,36 @@ namespace Aplicação_Avaliativa_P2
             lblNomeCliente.Text = clientes[cpf];
             CarregarPedidos(cpf);
         }
+
+        private void CarregarPedidos(string cpf)
+        {
+            try
+            {
+                listView1.Items.Clear();
+                pedidos.Clear();
+
+                if (File.Exists(pedidosCsvFilePath))
+                {
+                    var linhas = File.ReadAllLines(pedidosCsvFilePath).Skip(1);
+                    foreach (var linha in linhas)
+                    {
+                        var valores = linha.Split(',');
+                        if (valores.Length > 1 && valores[1].Trim().Replace("\"", "") == cpf)
+                        {
+                            string idPedido = valores[0].Trim().Replace("\"", "");
+                            DateTime dataPedido = DateTime.Parse(valores[2].Trim().Replace("\"", ""));
+                            decimal totalPedido = decimal.Parse(valores[3].Trim().Replace("\"", ""));
+                            pedidos.Add(new Pedido { idPedido = idPedido, cpfCliente = cpf, dataPedido = dataPedido, totalPedido = totalPedido });
+                            listView1.Items.Add(new ListViewItem(new string[] { idPedido, dataPedido.ToString("g"), totalPedido.ToString("C") }));
+                        }
+                    }
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao carregar pedidos: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
