@@ -33,6 +33,8 @@
             btnConsulta = new Button();
             lblNomeCliente = new Label();
             listView1 = new ListView();
+            listView2 = new ListView();
+            lblTotalPedido = new Label();
             SuspendLayout();
             // 
             // label1
@@ -74,15 +76,34 @@
             // 
             listView1.Location = new Point(12, 133);
             listView1.Name = "listView1";
-            listView1.Size = new Size(492, 146);
+            listView1.Size = new Size(274, 146);
             listView1.TabIndex = 4;
             listView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // listView2
+            // 
+            listView2.Location = new Point(333, 133);
+            listView2.Name = "listView2";
+            listView2.Size = new Size(359, 146);
+            listView2.TabIndex = 5;
+            listView2.UseCompatibleStateImageBehavior = false;
+            // 
+            // lblTotalPedido
+            // 
+            lblTotalPedido.AutoSize = true;
+            lblTotalPedido.Location = new Point(333, 282);
+            lblTotalPedido.Name = "lblTotalPedido";
+            lblTotalPedido.Size = new Size(93, 15);
+            lblTotalPedido.TabIndex = 6;
+            lblTotalPedido.Text = "Total Do Pedido:";
             // 
             // Consulta_de_Pedidos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(lblTotalPedido);
+            Controls.Add(listView2);
             Controls.Add(listView1);
             Controls.Add(lblNomeCliente);
             Controls.Add(btnConsulta);
@@ -101,5 +122,7 @@
         private Button btnConsulta;
         private Label lblNomeCliente;
         private ListView listView1;
+        private ListView listView2;
+        private Label lblTotalPedido;
     }
 }

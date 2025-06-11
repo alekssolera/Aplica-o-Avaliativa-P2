@@ -14,7 +14,7 @@ namespace Aplicação_Avaliativa_P2
     {
         private readonly string clientesCsvFilePath = @"C:\Users\Pichau\Desktop\Avaliação P2\Clientes.csv";
         private readonly string pedidosCsvFilePath = @"C:\Users\Pichau\Desktop\Avaliação P2\pedidos\Pedidos.csv";
-        private readonly string itensPedidosCsvFilePath = @"C:\Users\Pichau\Desktop\Avaliação P2\pedidos";
+        private readonly string itensPedidosDirectory = @"C:\Users\Pichau\Desktop\Avaliação P2\pedidos";
 
         private Dictionary<string, string> clientes = new Dictionary<string, string>();
         private List<Pedido> pedidos = new List<Pedido>();
@@ -87,6 +87,54 @@ namespace Aplicação_Avaliativa_P2
             catch (Exception ex)
             {
                 MessageBox.Show($"Erro ao carregar pedidos: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count > 0)
+            {
+                string idPedido = listView1.SelectedItems[0].SubItems[0].Text;
+                CarregarItensPedido(idPedido);
+            }
+        }
+
+        private void CarregarItensPedido(string idPedido)
+        {
+            try
+            {
+                listView2.Items.Clear();
+                string itensPedidosFilePath = Path.Combine(itensPedidosDirectory, $"{idPedido}.csv");
+
+                if (File.Exists(itensPedidosFilePath))
+                {
+                    var linhas = File.ReadAllLines(itensPedidosFilePath).Skip(1);
+                    decimal totalPedido = 0;
+
+                    foreach (var linha in linhas)
+                    {
+                        var valores = linha.Split(',');
+                        if (valores.Length > 3)
+                        {
+                            string produto = valores[0].Trim().Replace("\"", "");
+                            int quantidade = int.Parse(valores[1].Trim().Replace("\"", ""));
+                            decimal precoUnitario = decimal.Parse(valores[2].Trim().Replace("\"", ""));
+                            decimal totalItem = decimal.Parse(valores[3].Trim().Replace("\"", ""));
+
+                            listView1.Items.Add(new ListViewItem(new[] { produto, quantidade.ToString(), precoUnitario.ToString("C"), totalItem.ToString("C") }));
+                            totalPedido += totalItem;
+                        }
+                    }
+                    lblTotalPedido.Text = $"Total do Pedido: {totalPedido:C}";
+                }
+                else
+                {
+                    MessageBox.Show("Itens do pedido não encontrados.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao carregar itens do pedido: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
